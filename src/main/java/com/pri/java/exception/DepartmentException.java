@@ -1,6 +1,6 @@
 package com.pri.java.exception;
 
-public class EmployeeException extends Exception {
+public class DepartmentException extends Exception {
 
 	/**
 	 * 

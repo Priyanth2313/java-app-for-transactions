@@ -4,22 +4,32 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 @Entity
 @Table(name = "EMPLOYEE")
 @NamedQuery(name = "Employee.findAll", query = "SELECT w FROM Employee w")
+@EntityListeners(AuditingEntityListener.class)
+
 public class Employee implements Serializable {
+
+
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 277426351071362937L;
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@Column(name = "EMPLOYEE_ID")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer employeeId;
 
 	@Column(name = "FIRST_NAME")
@@ -30,17 +40,6 @@ public class Employee implements Serializable {
 
 	@Column(name = "EMAIL")
 	private String email;
-
-	public Employee() {
-	}
-	
-	public Employee(String firstName, String lastName, String email) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-	}
-
 
 	public Integer getEmployeeId() {
 		return employeeId;
@@ -80,4 +79,7 @@ public class Employee implements Serializable {
 				+ email + "]";
 	}
 
+	
+
 }
+

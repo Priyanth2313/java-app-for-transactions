@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
 Built-By: priya
 Build-Jdk: 10.0.1
+Implementation-Title: HCL-Transaction-Pri
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.example
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/HCL-Transaction-Pri
 Created-By: Maven Integration for Eclipse
 
