@@ -1,11 +1,11 @@
-package com.hcl.java.service;
+package com.pri.java.repository;
 
 import java.util.List;
 
-import com.hcl.java.entity.Employee;
-import com.hcl.java.exception.EmployeeException;
+import com.pri.java.entity.Employee;
+import com.pri.java.exception.EmployeeException;
 
-public interface IEmployeeService {
+public interface IEmployeeDAO {
 
 	public void saveEmployee(Employee emp) throws EmployeeException;
 

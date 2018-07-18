@@ -1,4 +1,4 @@
-package com.hcl.java.repository.impl;
+package com.pri.java.repository.impl;
 
 import java.util.List;
 
@@ -7,11 +7,14 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 
-import com.hcl.java.entity.Employee;
-import com.hcl.java.exception.EmployeeException;
-import com.hcl.java.repository.IEmployeeDAO;
+import com.pri.java.entity.Employee;
+import com.pri.java.exception.EmployeeException;
+import com.pri.java.repository.IEmployeeDAO;
+
+/* All the database access logic is written here */
 
 @Repository
+// is a marker for any class that fulfills the role(DAO) of a repository. Translates exceptions
 public class EmployeeDAOImpl implements IEmployeeDAO {
 	
 

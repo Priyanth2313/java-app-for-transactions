@@ -1,4 +1,4 @@
-package com.hcl.java.entity;
+package com.pri.java.entity;
 
 import java.io.Serializable;
 

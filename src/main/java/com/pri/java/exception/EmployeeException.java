@@ -1,4 +1,4 @@
-package com.hcl.java.exception;
+package com.pri.java.exception;
 
 public class EmployeeException extends Exception {
 

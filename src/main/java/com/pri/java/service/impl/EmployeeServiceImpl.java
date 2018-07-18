@@ -1,4 +1,4 @@
-package com.hcl.java.service.impl;
+package com.pri.java.service.impl;
 
 import java.util.List;
 
@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.hcl.java.entity.Employee;
-import com.hcl.java.exception.EmployeeException;
-import com.hcl.java.repository.IEmployeeDAO;
-import com.hcl.java.service.IEmployeeService;
+import com.pri.java.entity.Employee;
+import com.pri.java.exception.EmployeeException;
+import com.pri.java.repository.IEmployeeDAO;
+import com.pri.java.service.IEmployeeService;
 
 @Service
 @Transactional

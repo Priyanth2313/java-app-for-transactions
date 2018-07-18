@@ -1,4 +1,4 @@
-package com.hcl.java.test;
+package com.pri.java.test;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -14,10 +14,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 
-import com.hcl.java.entity.Employee;
-import com.hcl.java.exception.EmployeeException;
-import com.hcl.java.service.IEmployeeService;
-import com.hcl.java.service.impl.EmployeeServiceImpl;
+import com.pri.java.entity.Employee;
+import com.pri.java.exception.EmployeeException;
+import com.pri.java.service.IEmployeeService;
+import com.pri.java.service.impl.EmployeeServiceImpl;
 
 public class TestEmployeeServiceImpl {
 
@@ -43,9 +43,9 @@ public class TestEmployeeServiceImpl {
 	void testSaveEmployee() {
 		Employee emp = new Employee();
 		emp.setEmployeeId(1);
-		emp.setFirstName("John");
-		emp.setLastName("Doe");
-		emp.setEmail("johndoe@gmail.com");
+		emp.setFirstName("Oliver");
+		emp.setLastName("Skriver");
+		emp.setEmail("oliverskriver@gmail.com");
 		try {
 			empService.saveEmployee(emp);
 			assertEquals(empService.getEmployee(1).getFirstName(), emp.getFirstName());
@@ -61,9 +61,9 @@ public class TestEmployeeServiceImpl {
 		Integer id = 1;
 		try {
 			Employee emp = empService.getEmployee(id);
-			assertEquals("Harsha", emp.getFirstName());
+			assertEquals("dasari", emp.getFirstName());
 		} catch (EmployeeException e) {
-			logger.debug("Employee not found with id: " + id);
+			logger.debug("Found no employee with id: " + id);
 			e.printStackTrace();
 		}
 	}
@@ -81,15 +81,17 @@ public class TestEmployeeServiceImpl {
 
 	@Test
 	void testAddAllEmployee() {
-		Employee emp = new Employee("demo1", "demolast1", "demo123@gmail.com");
-		Employee emp2 = new Employee("demo2", "demolast2", "demo234@gmail.com");
-		Employee emp3 = new Employee("demo3", "demolast3", "demo345@gmail.com");
-		Employee emp4 = new Employee("demo4", "demolast4", "demo456@gmail.com");
+		Employee emp = new Employee("Test", "Jane", "jane@gmail.com");
+		Employee emp2 = new Employee("Test", "Griver", "griver@gmail.com");
+		Employee emp3 = new Employee("Test", "Ursula", "ursula@gmail.com");
+		Employee emp4 = new Employee("Test", "Neptune", "neptune@gmail.com");
+		Employee emp5 = new Employee("Test", "Venus", "venus@gmail.com");
 		List<Employee> empList = new ArrayList<Employee>();
 		empList.add(emp);
 		empList.add(emp2);
 		empList.add(emp3);
 		empList.add(emp4);
+		empList.add(emp5);
 		
 		try {
 			empService.addAllEmployee(empList);
@@ -119,7 +121,7 @@ public class TestEmployeeServiceImpl {
 		emp.setEmployeeId(1);
 		emp.setFirstName("UpdatedFirstName");
 		emp.setLastName("UpdatedLastName");
-		emp.setEmail("demo@gmail.com");
+		emp.setEmail("test@gmail.com");
 		try {
 			empService.updateEmployee(emp);
 			assertEquals(empService.getEmployee(1).getFirstName(), emp.getFirstName());
